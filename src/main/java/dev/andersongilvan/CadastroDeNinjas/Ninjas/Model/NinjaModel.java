@@ -1,7 +1,9 @@
-package dev.andersongilvan.CadastroDeNinjas;
+package dev.andersongilvan.CadastroDeNinjas.Ninjas.Model;
 
 
+import dev.andersongilvan.CadastroDeNinjas.Missoes.Models.MissoesModel;
 import jakarta.persistence.*;
+import org.springframework.validation.beanvalidation.SpringValidatorAdapter;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -11,10 +13,16 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     private String nome;
+
     private String email;
+
     private int idade;
+
+    // @ManyToOne um ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
