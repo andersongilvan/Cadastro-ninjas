@@ -3,11 +3,14 @@ package dev.andersongilvan.CadastroDeNinjas.Missoes.Models;
 
 import dev.andersongilvan.CadastroDeNinjas.Ninjas.Model.NinjaModel;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
+
 @Entity
 @Table(name = "tb_missoes")
+@Data
 public class MissoesModel {
 
     @Id
